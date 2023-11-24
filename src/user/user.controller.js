@@ -13,8 +13,8 @@ const createUser = async (req, res) => {
 //if (error.code == 11000) return res.status(400).json({error: 'email already exist'}) обработка ошибки (Запомнить)
 const getUsers = async (req, res) => {
     try {
-        const sort = req.query.sort? req.query.sort: 1
-        const users = await User.find().sort({age:Number(sort)}); 
+        const sort = req.query.sort? req.query.sort: 1            // req.query.sort ? {age: Number(req.query.sort)}:{}
+        const users = await User.find().sort({age:Number(sort)}); // .sort(sort)
         res.json(users);
     } catch (error) {
         res.status(500).json({ error: error.message });
