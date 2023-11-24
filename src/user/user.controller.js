@@ -90,6 +90,7 @@ const sortedByAgeLt = async (req, res) => {
 const sortedByAge = async (req, res) => {
     if (req.query.gt) return await sortedByAgeGt(req, res)
     if (req.query.lt) return await sortedByAgeLt(req, res)
+  
 }
 
 
